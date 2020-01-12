@@ -57,7 +57,7 @@ module.exports = class UsersController{
                 const passwordsMatch = await bcrypt.compare(password, oneUser[0].password)
                 if(passwordsMatch){
                     return(
-                        res.status(200).json({success:true, msg:"user authenticated"})
+                        res.status(200).json({success:true, msg:oneUser[0]})
                     )
                 }
                 else{
