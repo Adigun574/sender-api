@@ -22,4 +22,8 @@ router.post('/edit', (req,res)=>{
     jobsController.EditJob(req,res)
 })
 
+router.get('/getjobbyposteremail/:email',(req,res)=>{
+    jobsController.GetJobByPosterEmail(req,res)
+})
+
 module.exports = router

@@ -15,4 +15,8 @@ router.post('/authenticate',(req,res)=>{
     usersController.authenticateUser(req,res)
 })
 
+router.get('/getuserbyemail/:email',(req,res)=>{
+    usersController.GetUserByEmail(req,res)
+})
+
 module.exports = router

@@ -73,4 +73,27 @@ module.exports = class UsersController{
             )
         }
     }
+
+    static async GetUserByEmail(req,res){
+        const email = req.params.email
+        try{
+            const oneUser = await User.find({email})
+            if(oneUser.length===0){
+                return (
+                        res.status(404).json({success:false, msg:"user not found"})
+                )
+            }
+            else{                
+                    return(
+                        res.status(200).json({success:true, msg:oneUser[0]})
+                    )
+                }
+            }
+        catch(err){
+            console.log(err)
+            return (
+                    res.status(500).json({success:false, msg:"soemthing went wrong"})
+            )
+        } 
+    }
 }
