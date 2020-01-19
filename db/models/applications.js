@@ -8,7 +8,8 @@ mongoose.connect(db.dbUri, { useNewUrlParser:true, useUnifiedTopology: true })
 const applicationSchema = new mongoose.Schema({
     applicantEmail:String,
     jobId:String,
-    status:String
+    status:String,
+    applicant:Object
 })
 
 const Application = new mongoose.model('Application', applicationSchema)

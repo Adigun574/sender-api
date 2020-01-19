@@ -2,12 +2,13 @@ const Application = require('../db/models/applications')
 
 module.exports = class JobsController{
     static async PostApplication(req,res){
-        const { applicantEmail, jobId, status} = req.body
+        const { applicantEmail, jobId, status, applicant} = req.body
         try{
             const newApplication = new Application({
                 applicantEmail,
                 jobId,
-                status
+                status,
+                applicant
             })
             await newApplication.save()
             return res.status(200).json({success:true, msg:'application posted'})
