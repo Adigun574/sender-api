@@ -15,4 +15,11 @@ router.get('/getbyjobid/:id',(req,res)=>{
     applicationsController.GetApplicationByJobId(req,res)
 })
 
+router.post('/updateapplication',(req,res)=>{
+    applicationsController.UpdateApplication(req,res)
+})
+
+router.get('/getapplicationbyapplicantemail/:email',(req,res)=>{
+    applicationsController.GetApplicationByApplicantEmail(req,res)
+})
 module.exports = router
