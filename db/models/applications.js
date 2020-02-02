@@ -9,7 +9,9 @@ const applicationSchema = new mongoose.Schema({
     applicantEmail:String,
     jobId:String,
     status:String,
-    applicant:Object
+    applicant:Object,
+    employer:String,
+    title:String
 })
 
 const Application = new mongoose.model('Application', applicationSchema)

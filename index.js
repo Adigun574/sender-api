@@ -7,6 +7,7 @@ const users = require('./routes/users')
 const profiles = require('./routes/profiles')
 const jobs = require('./routes/jobs')
 const applications = require('./routes/applications')
+const messages = require('./routes/messages')
 
 mongoose.createConnection(dbUri, {
     useNewUrlParser: true, useUnifiedTopology: true
@@ -30,6 +31,7 @@ app.use('/users', users)
 app.use('/profiles', profiles)
 app.use('/jobs', jobs)
 app.use('/applications', applications)
+app.use('/messages', messages)
 
 app.listen(PORT, ()=>{console.log(`server running on port ${PORT}`)})
 

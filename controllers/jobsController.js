@@ -5,13 +5,13 @@ module.exports = class JobsController{
         const { 
             title, description, location, duration, 
             pay, requirements, type, posterEmail, 
-            datePosted, employer
+            datePosted, employer, category
         } = req.body
         try{
             const newJob = new Job({
                 title, description, location, duration,
                 pay, requirements, type, posterEmail,
-                datePosted, employer
+                datePosted, employer, category
             })
             await newJob.save()
             return res.status(200).json({success:true, msg:'job posted'})            

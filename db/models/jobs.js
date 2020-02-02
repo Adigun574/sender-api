@@ -18,7 +18,8 @@ const jobSchema = new mongoose.Schema({
     type:String,
     posterEmail:String,
     datePosted:String,
-    employer:String
+    employer:String,
+    category:String
 })
 
 const Job = new mongoose.model('Job', jobSchema)

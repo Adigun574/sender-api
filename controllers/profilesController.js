@@ -6,14 +6,16 @@ module.exports = class ProfileController{
             userName, email, firstName, lastName,
             jobTitle, location, rating, phone,
             address, linkedin, whatsapp, birthday,
-            gender, skills, jobDescription, sellYourself
+            gender, skills, jobDescription, sellYourself, 
+            imgUrl
         } = req.body
         try{
             const newProfile = new Profile({
                 userName, email, firstName, lastName,
                 jobTitle:null, location:null, rating:null, phone:null,
                 address:null, linkedin:null, whatsapp:null, birthday:null,
-                gender:null, skills:null, jobDescription:null, sellYourself:null
+                gender:null, skills:null, jobDescription:null, sellYourself:null,
+                imgUrl:null
             })
             await newProfile.save()
             return (
@@ -33,14 +35,16 @@ module.exports = class ProfileController{
             userName, email, firstName, lastName,
             jobTitle, location, rating, phone,
             address, linkedin, whatsapp, birthday,
-            gender, skills, jobDescription, sellYourself
+            gender, skills, jobDescription, sellYourself,
+            imgUrl
         } = req.body
         try{
         const profileToUpdate = new Profile({
             userName, email, firstName, lastName,
             jobTitle:null, location:null, rating:null, phone:null,
             address:null, linkedin:null, whatsapp:null, birthday:null,
-            gender:null, skills:null, jobDescription:null, sellYourself:null
+            gender:null, skills:null, jobDescription:null, sellYourself:null,
+            imgUrl:null
         })
         await Profile.findOneAndUpdate({email:req.body.email}, {$set: req.body}, {useFindAndModify:false})
         return(

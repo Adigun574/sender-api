@@ -61,6 +61,10 @@ const profileSchema = new mongoose.Schema({
     skills:{
         type:Array,
         required:false
+    },
+    imgUrl:{
+        type:String,
+        required:false
     }
 })
 
